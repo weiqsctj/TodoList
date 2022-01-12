@@ -10,7 +10,7 @@
 			v-show="todo.isEdit" 
 			:value="todo.title" 
 			@blur="handleBlur(todo,$event)"
-			ref="inputTitle"  
+			ref="inputTitle" 
 		/>
 		</label>
 		<button class="btn btn-danger" @click="handleDelete(todo.id)">删除</button>
@@ -27,7 +27,7 @@
 		
 		methods: {
 			//勾选or取消勾选
-			handleCheck(id){ 
+			handleCheck(id){
 				//通知App组件将对应的todo对象的done值取反
 				// this.checkTodo(id)
 				//执行或者触发
@@ -50,10 +50,6 @@
 					this.$set(todo,'isEdit',true)
 				}
 				//nextTick所指定的回调函数会在Dom节点更新之后再执行
-				//nextTick
-                //1. 语法：```this.$nextTick(回调函数)```
-                //2. 作用：在下一次 DOM 更新结束后执行其指定的回调。
-                //3. 什么时候用：当改变数据后，要基于更新后的新DOM进行某些操作时，要在nextTick所指定的回调函数中执行。
 				this.$nextTick(function(){
                 this.$refs.inputTitle.focus()
 				})

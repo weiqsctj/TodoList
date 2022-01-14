@@ -220,7 +220,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 3. 绑定自定义事件：
 
-   1. 第一种方式，在父组件中：```<Demo @atguigu="test"/>```  或 ```<Demo v-on:atguigu="test"/>```
+   1. 第一种方式，在父组件中：```<Demo @weiqsctj="test"/>```  或 ```<Demo v-on:weiqsctj="test"/>```
 
    2. 第二种方式，在父组件中：
 
@@ -228,19 +228,19 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
       <Demo ref="demo"/>
       ......
       mounted(){
-         this.$refs.xxx.$on('atguigu',this.test)
+         this.$refs.xxx.$on('weiqsctj',this.test)
       }
       ```
 
    3. 若想让自定义事件只能触发一次，可以使用```once```修饰符，或```$once```方法。
 
-4. 触发自定义事件：```this.$emit('atguigu',数据)```		
+4. 触发自定义事件：```this.$emit('weiqsctj',数据)```		
 
-5. 解绑自定义事件```this.$off('atguigu')```
+5. 解绑自定义事件```this.$off('weiqsctj')```
 
 6. 组件上也可以绑定原生DOM事件，需要使用```native```修饰符。
 
-7. 注意：通过```this.$refs.xxx.$on('atguigu',回调)```绑定自定义事件时，回调<span style="color:red">要么配置在methods中</span>，<span style="color:red">要么用箭头函数</span>，否则this指向会出问题！
+7. 注意：通过```this.$refs.xxx.$on('weiqsctj',回调)```绑定自定义事件时，回调<span style="color:red">要么配置在methods中</span>，<span style="color:red">要么用箭头函数</span>，否则this指向会出问题！
 
 ## 全局事件总线（GlobalEventBus）
 
@@ -1041,7 +1041,7 @@ module.exports = {
    router.beforeEach((to,from,next)=>{
    	console.log('beforeEach',to,from)
    	if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
-   		if(localStorage.getItem('school') === 'atguigu'){ //权限控制的具体规则
+   		if(localStorage.getItem('school') === 'weiqsctj'){ //权限控制的具体规则
    			next() //放行
    		}else{
    			alert('暂无权限查看')
@@ -1069,7 +1069,7 @@ module.exports = {
    beforeEnter(to,from,next){
    	console.log('beforeEnter',to,from)
    	if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
-   		if(localStorage.getItem('school') === 'atguigu'){
+   		if(localStorage.getItem('school') === 'weiqsctj'){
    			next()
    		}else{
    			alert('暂无权限查看')
